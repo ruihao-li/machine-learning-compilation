@@ -1,8 +1,10 @@
-## Linear vs. Convolutional Autoencoders
+# Linear vs. Convolutional Autoencoders
 
 An autoencoder is a neural network that can be used to encode and decode data. The general structure of an autoencoder consists of two parts: an encoder and a decoder. The encoder compresses the input data into a lower dimensional representation (“code” in the schematic below, which is often referred to as the latent space representation) by extracting the most salient features of the data, while the decoder reconstructs the input data from the compressed representation. Therefore, autoencoder is often used for *dimensionality reduction*.
 
-<img src="schematic.png" alt="AE_schematic" style="width:80%;"/>
+<center>
+    <img src="schematic.png" alt="AE_schematic" style="width:60%;"/>
+</center>
 
 In this notebook (`autoencoders.ipynb`) we constructed two types of classical autoencoders in [PyTorch](https://pytorch.org/) to reconstruct the `Fashion-MNIST` images: the linear and convolutional autoencoders. It is based on [this tutorial](https://covalent.readthedocs.io/en/latest/tutorials/machine_learning/autoencoders.html#) I wrote for Covalent at the beginning of my internship at [Agnostiq](https://agnostiq.ai/) in June 2022.
 
