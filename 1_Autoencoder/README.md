@@ -3,7 +3,7 @@
 An autoencoder is a neural network that can be used to encode and decode data. The general structure of an autoencoder consists of two parts: an encoder and a decoder. The encoder compresses the input data into a lower dimensional representation (“code” in the schematic below, which is often referred to as the latent space representation) by extracting the most salient features of the data, while the decoder reconstructs the input data from the compressed representation. Therefore, autoencoder is often used for *dimensionality reduction*.
 
 <p align="center">
-    <img src="schematic.png" alt="AE_schematic" style="width:60%;"/>
+    <img src="img/schematic.png" alt="AE_schematic" style="width:60%;"/>
 </p>
 
 In this notebook (`autoencoders.ipynb`) we constructed two types of classical autoencoders in [PyTorch](https://pytorch.org/) to reconstruct the `Fashion-MNIST` images: the linear and convolutional autoencoders. It is based on [this tutorial](https://covalent.readthedocs.io/en/latest/tutorials/machine_learning/autoencoders.html#) I wrote for Covalent at the beginning of my internship at [Agnostiq](https://agnostiq.ai/) in June 2022.
@@ -14,10 +14,10 @@ For the convolutional autoencoder, we use three hidden layers. Each convolutiona
 
 Here is what the training losses look like for both autoencoders:
 
-![train_losses](train_losses.png)
+![train_losses](img/train_losses.png)
 
 Clearly, the losses for the convolution autoencoder are much lower than the linear counterpart. This is also reflected in the quality of the reconstructions. Here I show 5 examples at the end of the training.
 
-![reconstructions](outputs.png)
+![reconstructions](img/outputs.png)
 
 P.S. Since I just purchased the M2 MacBook Air base model (in July 2022) and PyTorch has recently announced [support for GPU-accelerated PyTorch training on Macs with Apple Silicon](https://pytorch.org/blog/introducing-accelerated-pytorch-training-on-mac/), I decided to train the models on both the CPU and the GPU and see if there is any noticeable difference in the performance. Unfortunately, for the test I ran, the GPU run took about the same amount of time as the CPU run (meh...). This is probably due to the fact that the GPU in my MacBook Air has only 8 cores.
